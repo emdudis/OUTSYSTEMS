@@ -43,3 +43,8 @@ This is a working prototype that focuses on business rules and architecture insi
 * **Asynchronous email system:** Emails are stored in an internal queue and a timer sends them gradually. All of them go to a **Mailtrap sandbox**, so no real email reaches anyone.
 * **Secured backoffice:** A simple access code keeps status changes in the hands of the cooperative's managers.
 * **Mocked AI components:** The responses of Llarina001 and Llarina002 are **simulated with internal test datasets and visual simulations**. Judges can evaluate the full flow and the business rules without live connections to paid APIs or third-party databases. The agent's verdict enters through a single service action that stores the decision, updates the candidate, and queues the right emails. Connecting a real agent only requires calling that action, with no changes to the business logic.
+
+
+## Demo Videos:
+[Demo](https://youtu.be/-rAHNDC-m4c)
+[Technical](https://youtu.be/wfDEwWnpbQY)
