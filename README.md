@@ -44,6 +44,27 @@ This is a working prototype that focuses on business rules and architecture insi
 * **Secured backoffice:** A simple access code keeps status changes in the hands of the cooperative's managers.
 * **Mocked AI components:** The responses of Llarina001 and Llarina002 are **simulated with internal test datasets and visual simulations**. Judges can evaluate the full flow and the business rules without live connections to paid APIs or third-party databases. The agent's verdict enters through a single service action that stores the decision, updates the candidate, and queues the right emails. Connecting a real agent only requires calling that action, with no changes to the business logic.
 
+## 📧 Email & Mailtrap Sandbox Configuration (ODC Portal)
+
+This application uses ODC's built-in **Send Email** functionality combined with a **5-minute Timer** that processes pending records from the `EmailQueue` entity. 
+
+Because SMTP configurations are managed at the stage level in ODC (and are not exported inside `.oml` files), please configure your stage's SMTP settings in the **ODC Portal** after importing the modules:
+
+1. Go to **ODC Portal** -> **Configure** -> **Email** (select your target stage, e.g., *Development*).
+2. Enter the following **Mailtrap Sandbox SMTP** details:
+   * **Server / Host:** `sandbox.smtp.mailtrap.io`
+   * **Port:** `2525` *(or `587`)*
+   * **Username:** `<6c413a2aa262ed>` *(provided privately to the judges)*
+   * **Password:** `<09eba20d18131e>` *(provided privately to the judges)*
+   * **Default Sender Email:** Any valid email format (e.g., `noreply@hackathon-app.com`)
+   * **Default Sender Name:** `Hackathon App`
+3. Click **Save** and deploy/publish the app.
+
+### How to test the 5-Minute Email Timer
+1. Trigger an action in the application that queues a new email in `EmailQueue`.
+2. Wait up to **5 minutes** for the scheduled Timer to run automatically (or trigger it manually via **ODC Portal -> Operations -> Timers**).
+3. Open the **Mailtrap Sandbox Inbox** to verify the delivered email and its rendered template.
+
 
 ## 2 VIDEOS:
 [**Demo**](https://youtu.be/-rAHNDC-m4c)
