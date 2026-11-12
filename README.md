@@ -44,14 +44,16 @@ This is a working prototype that focuses on business rules and architecture insi
 * **Secured backoffice:** A simple access code keeps status changes in the hands of the cooperative's managers.
 * **Mocked AI components:** The responses of Llarina001 and Llarina002 are **simulated with internal test datasets and visual simulations**. Judges can evaluate the full flow and the business rules without live connections to paid APIs or third-party databases. The agent's verdict enters through a single service action that stores the decision, updates the candidate, and queues the right emails. Connecting a real agent only requires calling that action, with no changes to the business logic.
 
-## 📧 Email & Mailtrap Sandbox Configuration (ODC Portal)
+## 3 SETTINGS IN ODC Portal
+
+## 1. 📧 Email & Mailtrap Sandbox Configuration (ODC Portal)
 
 This application uses ODC's built-in **Send Email** functionality combined with a **5-minute Timer** that processes pending records from the `EmailQueue` entity. 
 
 Because SMTP configurations are managed at the stage level in ODC (and are not exported inside `.oml` files), please configure your stage's SMTP settings in the **ODC Portal** after importing the modules:
 
 1. Go to **ODC Portal** -> **Configure** -> **Email** (select your target stage, e.g., *Development*).
-2. Enter the following **Mailtrap Sandbox SMTP** details:
+2. Enter the following **Mailtrap Sandbox SMTP** CREDENTIALS:
    * **Server / Host:** `sandbox.smtp.mailtrap.io`
    * **Port:** `2525` *(or `587`)*
    * **Username:** `<6c413a2aa262ed>` *(provided privately to the judges)*
@@ -65,8 +67,10 @@ Because SMTP configurations are managed at the stage level in ODC (and are not e
 2. Wait up to **5 minutes** for the scheduled Timer to run automatically (or trigger it manually via **ODC Portal -> Operations -> Timers**).
 3. Open the **Mailtrap Sandbox Inbox** to verify the delivered email and its rendered template.
 
+### 2. BoardMemberEmail (App Setting):
+Set its value to: **`javier@el-llar.com`**
 
-### 1. Backoffice Access Code (App Setting)
+### 3. Backoffice Access Code (App Setting):
 1. Go to **ODC Portal** -> **Apps** -> select **`El Llar Hub`** -> **Configuration** -> **Settings**.
 2. Locate the setting **`BackofficeAccessCode`** (used to validate access to the Backoffice).
 3. Set its value to: **`2026`** *(e.g., `1234` or whatever code you want to use)* and save/apply changes.
