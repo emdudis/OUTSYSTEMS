@@ -48,4 +48,4 @@ This is a working prototype that focuses on business rules and architecture insi
 ## 2 VIDEOS:
 [**Demo**](https://youtu.be/-rAHNDC-m4c)
 
-[**Technical**](https://youtu.be/wfDEwWnpbQY)
+[**Technical**](https://youtu.be/yk8uPOCQWvg)
