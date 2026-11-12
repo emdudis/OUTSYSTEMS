@@ -67,10 +67,13 @@ Because SMTP configurations are managed at the stage level in ODC (and are not e
 2. Wait up to **5 minutes** for the scheduled Timer to run automatically (or trigger it manually via **ODC Portal -> Operations -> Timers**).
 3. Open the **Mailtrap Sandbox Inbox** to verify the delivered email and its rendered template.
 
-### 2. BoardMemberEmail (App Setting):
-Set its value to: **`javier@el-llar.com`**
 
-### 3. Backoffice Access Code (App Setting):
+## 2. BoardMemberEmail and EmailsPerRun(App Setting):
+Set BoardMemberEmail value to: **`javier@el-llar.com`**
+Set EmailsPerRun value to: **`1`**
+
+
+## 3. Backoffice Access Code (App Setting):
 1. Go to **ODC Portal** -> **Apps** -> select **`El Llar Hub`** -> **Configuration** -> **Settings**.
 2. Locate the setting **`BackofficeAccessCode`** (used to validate access to the Backoffice).
 3. Set its value to: **`2026`** *(e.g., `1234` or whatever code you want to use)* and save/apply changes.
