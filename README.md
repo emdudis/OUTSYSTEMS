@@ -66,6 +66,12 @@ Because SMTP configurations are managed at the stage level in ODC (and are not e
 3. Open the **Mailtrap Sandbox Inbox** to verify the delivered email and its rendered template.
 
 
+### 1. Backoffice Access Code (App Setting)
+1. Go to **ODC Portal** -> **Apps** -> select **`El Llar Hub`** -> **Configuration** -> **Settings**.
+2. Locate the setting **`BackofficeAccessCode`** (used to validate access to the Backoffice).
+3. Set its value to: **`2026`** *(e.g., `1234` or whatever code you want to use)* and save/apply changes.
+
+
 ## 2 VIDEOS:
 [**Demo**](https://youtu.be/-rAHNDC-m4c)
 
